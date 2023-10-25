@@ -3,7 +3,7 @@ import './App.css'
 function App() {
 
   return (
-    <div>Project</div>
+    <div className="text-3xl font-bold uppercase text-center mt-5">Project</div>
   )
 }
 
