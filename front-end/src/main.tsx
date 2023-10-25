@@ -1,6 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import './index.css'
 import App from './App.tsx'
+import { HomePage } from './pages/index.ts'
 import {
   createBrowserRouter,
   createRoutesFromElements,
@@ -8,13 +10,17 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
-import './index.css'
 
 const router = createBrowserRouter(createRoutesFromElements(
   <Route
   path="/"
   element={<App />}
-  />
+  >
+    <Route 
+    path="/user"
+    element={<HomePage />}
+    />
+  </Route>
 ))
 
 ReactDOM.createRoot(document.getElementById('root')!).render(

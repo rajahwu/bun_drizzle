@@ -3,7 +3,7 @@
   "module": "index.ts",
   "type": "module",
   "scripts":{
-    "generate": "drizzle-kit generate:pg"
+    "generate": "drizzle-kit generate:sqlite"
   },
   "devDependencies": {
     "bun-types": "latest",

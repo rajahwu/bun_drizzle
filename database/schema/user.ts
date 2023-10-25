@@ -1,11 +1,7 @@
-import { serial, text, timestamp, pgTable } from "drizzle-orm/pg-core";
+import { sqliteTable, text } from "drizzle-orm/sqlite-core";
  
-export const user = pgTable("user", {
-  id: serial("id"),
-  name: text("name"),
-  email: text("email"),
-  password: text("password"),
-  role: text("role").$type<"admin" | "customer">(),
-  createdAt: timestamp("created_at"),
-  updatedAt: timestamp("updated_at"),
+export const user = sqliteTable("user", {
+ id: text('id'),
+ username: text('username'),
+ password: text('password')
 });
