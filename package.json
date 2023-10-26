@@ -14,7 +14,6 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
-    "@types/better-sqlite3": "^7.6.6",
     "@types/react-router-dom": "^5.3.3",
     "better-sqlite3": "^9.0.0",
     "bun": "^1.0.7",

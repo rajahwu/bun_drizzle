@@ -1,10 +1,7 @@
-import { db } from "../database";
-import { users  } from "../database/schema";
+import { db } from "../database/db";
+import * as schema from "../database/schema"
 
 export async function getUsers() {
-    const result = await db.select().from(users)
-    .then(res => console.log(res))
-    .catch(err => console.log(err))
+    const result = await db.select().from(schema.users)
+    return result
 }
-
-getUsers()
