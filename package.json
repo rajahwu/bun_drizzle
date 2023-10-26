@@ -2,7 +2,7 @@
   "name": "project",
   "module": "index.ts",
   "type": "module",
-  "scripts":{
+  "scripts": {
     "generate": "drizzle-kit generate:sqlite"
   },
   "devDependencies": {
@@ -13,6 +13,8 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
+    "@types/react-router-dom": "^5.3.3",
+    "bun": "^1.0.7",
     "drizzle-orm": "^0.28.6"
   }
 }
