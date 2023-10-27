@@ -1,11 +1,15 @@
 import { Elysia } from "elysia";
 import { cors } from '@elysiajs/cors';
-import { getUsers } from "../query-functions/getusers";
+import { getUsers, validateUser } from "../query-functions/getusers";
 
 
 const app = new Elysia()
 
 app.use(cors())
+.post('/api/login', ({ body }) => {
+    const validated = validateUser(body.username, body.password)
+    return validated
+})
 
 app.get("/api/users", async () => {
   const users = await getUsers()
@@ -18,6 +22,7 @@ app.get("/api/users", async () => {
     }
   )
 })
+
 
 app.listen(3000)
 

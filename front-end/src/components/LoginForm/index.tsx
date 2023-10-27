@@ -1,8 +1,6 @@
 import { useState } from 'react'
 import { useActionData, Form } from 'react-router-dom'
 
-
-
 export default function LoginForm() {
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")

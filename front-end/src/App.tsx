@@ -1,14 +1,17 @@
 import { useLocation } from "react-router-dom";
 import { Outlet, Link } from "react-router-dom";
-import  axios  from 'axios'
+import { useQuery } from "react-query"
+import { getUsers } from "./query-functions/get-users";
 import "./App.css";
-
-axios.get("http://localhost:8000/api")
-.then((res) => console.log(res))
-
 
 function App() {
   const location = useLocation();
+  const { data, isLoading, isError } = useQuery('users', getUsers)
+
+  if (isLoading) return <div>Loding...</div>
+  if (isError) return <div>Error fetching data</div>
+  console.log(data)
+
   const loginUrl = location.pathname === "/login" ? "/" : "/login";
   return (
     <div>

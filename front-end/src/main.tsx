@@ -9,7 +9,12 @@ import {
   Route,
   RouterProvider,
 } from "react-router-dom";
+import {
+  QueryClient,
+  QueryClientProvider,
+} from 'react-query'
 
+const client = new QueryClient()
 
 const router = createBrowserRouter(createRoutesFromElements(
   <Route
@@ -30,6 +35,8 @@ const router = createBrowserRouter(createRoutesFromElements(
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <QueryClientProvider client={client}>
+      <RouterProvider router={router} />
+    </QueryClientProvider>
   </React.StrictMode>,
 )

@@ -1,4 +1,25 @@
-import { getUsers } from "../query-functions/getusers";
+const getUsers = async () => {
+  await new Promise(resolve => setTimeout(resolve, 2000));
+  return {
+    "users": [
+      {
+        "id": "78b5c397-0e78-440e-ba7b-03d3230e346a",
+        "username": "user01",
+        "password": "123456"
+      },
+      {
+        "id": "9b03b999-4ad4-476c-9fc2-283b58f5855b",
+        "username": "user02",
+        "password": "123456"
+      },
+      {
+        "id": "ad0c0cb9-b9b4-48b1-ae2a-787d5c759466",
+        "username": "user03",
+        "password": "123456"
+      }
+    ]
+  }
+}
 
 export const server = Bun.serve({
   port: 8000,
